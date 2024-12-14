@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <!-- <link rel="stylesheet" href="/styles.css"> Link to your CSS file -->
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 20px;
+        }
+    
+        /* Registration Container */
+        .registration-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+    
+        .registration-container h2 {
+            font-size: 28px;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+    
+        /* Form Label and Inputs */
+        .registration-form label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+            text-align: left;
+        }
+    
+        .registration-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        .registration-form input:focus {
+            border-color: #1d3557;
+            outline: none;
+            box-shadow: 0 0 4px rgba(29, 53, 87, 0.5);
+        }
+    
+        /* Register Button */
+        .register-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #1d3557;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .register-btn:hover {
+            background-color: #457b9d;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+    
+            .registration-container {
+                padding: 20px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="registration-container">
+        <form action="/user_reg_done" method="POST" class="registration-form">
+            <h2>User Registration</h2>
+
+            <!-- Student ID (s_id) -->
+            <label for="s_id">Student ID:</label>
+            <input type="text" id="s_id" name="s_id" placeholder="Enter your Student ID" required>
+
+            <!-- Unique Student Number (USN) -->
+            <label for="usn">USN:</label>
+            <input type="text" id="usn" name="usn" placeholder="Enter your USN" required>
+
+            <!-- Name -->
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <!-- Date of Birth (dob) -->
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob" required>
+
+            <!-- Email -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <!-- Phone Number -->
+            <label for="phno">Phone Number:</label>
+            <input type="text" id="phno" name="phno" placeholder="Enter your phone number" required>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="register-btn">Register</button>
+        </form>
+    </div>
+</body>
+</html>

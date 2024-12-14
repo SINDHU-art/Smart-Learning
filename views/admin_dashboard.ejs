@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+    
+        /* Navbar Styles */
+        nav {
+            background-color: #1d3557;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+    
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+    
+        nav a:hover {
+            background-color: #457b9d;
+        }
+    
+        /* Page Title */
+        h1, h2 {
+            text-align: center;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+    
+        h1 {
+            font-size: 32px;
+        }
+    
+        h2 {
+            font-size: 24px;
+        }
+    
+        /* Button Styles */
+        .btn {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 12px 24px;
+            background-color: #1d3557;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+    
+        .btn:hover {
+            background-color: #457b9d;
+        }
+    
+        /* Table Styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+    
+        table thead {
+            background-color: #1d3557;
+            color: white;
+        }
+    
+        table thead th {
+            padding: 12px;
+            font-size: 16px;
+        }
+    
+        table tbody tr {
+            border-bottom: 1px solid #ddd;
+        }
+    
+        table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    
+        table tbody td {
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
+    
+        /* Form Styles */
+        form {
+            margin: 20px 0;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    
+        form table {
+            width: 100%;
+            margin-top: 10px;
+        }
+    
+        form table tr td {
+            padding: 8px;
+            font-size: 16px;
+        }
+    
+        form label {
+            font-weight: bold;
+        }
+    
+        form input[type="text"],
+        form input[type="number"],
+        form input[type="file"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    
+        form input[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #1d3557;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        form input[type="submit"]:hover {
+            background-color: #457b9d;
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Navbar with links -->
+    <nav>
+        <a href="/admin-dashboard">Dashboard</a>
+        <a href="/register-course">Register Course</a> <!-- Button to go to course registration -->
+        <a href="/logout">Logout</a>
+    </nav>
+
+    <h1>Admin Dashboard</h1>
+
+    <!-- Button to register a new course -->
+   
+
+    <h2>User and Enrollment Details</h2>
+    
+    <!-- Table to display user and enrollment details -->
+    <table>
+        <thead>
+            <tr>
+                <th>s_id</th>
+                <th>USN</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Course Name</th>
+                <th>Enrollment Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% users.forEach(function(user) { %>
+                <tr>
+                    <td><%= user.s_id %></td>
+                    <td><%= user.usn %></td>
+                    <td><%= user.name %></td>
+                    <td><%= user.phno %></td>
+                    <td><%= user.course_name %></td>
+                    <td><%= user.enrollment_date %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Register New Course</h2>
+    <!-- Form to register a new course, including video upload -->
+    <form action="/register-course" method="POST" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td><label for="course_name">Course Name:</label></td>
+                <td><input type="text" id="course_name" name="course_name" required></td>
+            </tr>
+            <tr>
+                <td><label for="description">Description:</label></td>
+                <td><textarea id="description" name="description" required></textarea></td>
+            </tr>
+            <tr>
+                <td><label for="duration">Duration (in hours):</label></td>
+                <td><input type="number" id="duration" name="duration" required></td>
+            </tr>
+            <tr>
+                <td><label for="video">Upload Video:</label></td>
+                <td><input type="file" id="video" name="video" accept="video/*" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Register Course"></td>
+            </tr>
+        </table>
+    </form>
+
+      
+</body>
+</html>

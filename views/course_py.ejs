@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Page - <%= course_name %></title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Verdana', sans-serif;
+            background-color: #f4f4f9;
+            color: #2c3e50;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* Video Card Styles */
+        .video-card {
+            background: linear-gradient(135deg, #e9eef5, #ffffff);
+            border: 1px solid #d1d9e6;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            max-width: 700px;
+            text-align: center;
+            margin-bottom: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .video-card h1 {
+            font-size: 30px;
+            color: #34495e;
+            margin-bottom: 20px;
+        }
+
+        .video-card p {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin-bottom: 20px;
+        }
+
+        .video-card video {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 10px;
+            border: 2px solid #dcdde1;
+            margin: 15px 0;
+            padding-left: 20px;
+        }
+
+        .video-card a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .video-card a:hover {
+            background-color: #34495e;
+        }
+
+        video {
+            display: block;
+            /* margin: 0 auto; */
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<!-- <body>
+    <div class="video-card" id="video-web">
+    <h1>Welcome to the <%= course_name %> Course!</h1>
+    
+   
+   <p>1.1 Introduction to Python Programming</p>
+    </div>
+    <a href="/course_py">Back to Home</a>
+
+    
+    
+    <video controls width="640">
+        <source src="/video/<%= course_name %>" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+
+
+
+    </body>    
+</html> -->
+
+<body>
+    <div class="video-card" id="video-web">
+        <h1>Welcome to the <%= course_name %> Course!</h1>
+        <p>1.1 Introduction to Python Programming</p>
+        <video controls>
+            <source src="/video/<%= course_name %>" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <a href="/course">Back to Home</a>
+    </div>
+</body>
+</html>

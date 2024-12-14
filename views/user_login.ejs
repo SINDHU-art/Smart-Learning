@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        /* body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0; */
+        
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://img.freepik.com/free-photo/overhead-view-coffee-cup-keyboard-camera-paper-white-background_23-2148042112.jpg?semt=ais_hybrid");
+            background-repeat: no-repeat ;
+            background-size: 100%;
+            color: #333;
+            margin: 0;
+            line-height: 1.6;
+            padding: 0;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #1d3557;
+            color: white;
+            padding: 15px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+    
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+    
+        .nav-links li {
+            display: inline;
+        }
+    
+        .nav-links a {
+            color: black;
+            background-color: beige ;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+    
+        .nav-links a:hover {
+            background-color: #457b9d;
+        }
+    
+        /* Login Container */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 60px); /* Adjust height based on navbar size */
+            padding: 20px;
+            color: rgb(13, 211, 211);
+        }
+    
+        .login-form {
+            /* background-color: #ffffff; */
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+    
+        .login-form h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 28px;
+            color: red;
+            margin-bottom: 20px;
+        }
+    
+        .login-form label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+    
+        .login-form input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        .login-form input:focus {
+            border-color: #f1f10e;
+            outline: none;
+            box-shadow: 0 0 4px rgba(29, 53, 87, 0.5);
+        }
+    
+        .login-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #d6ce3a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .login-btn:hover {
+            background-color: #457b9d;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                text-align: center;
+            }
+    
+            .nav-links {
+                flex-direction: column;
+                gap: 10px;
+            }
+    
+            .login-container {
+                padding: 20px;
+            }
+    
+            .login-form {
+                padding: 20px;
+            }
+        }
+    </style>
+    
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">TECHNICAL KNOWLEDGE FOR FUTURISTIC EDUCATION</a>
+            <ul class="nav-links">
+                <li><a href="admin-login">Admin Login</a></li>
+                <li><a href="user_reg">User Registration</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Login Form -->
+    <div class="login-container">
+        <form action="get-login" method="POST" class="login-form">
+            <h1>User Login</h1>
+            <label for="username">USN:</label>
+            <input type="text" id="usn" name="usn" placeholder="Enter your username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>

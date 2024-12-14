@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Courses</title>
+</head>
+<body>
+    <h1>All Registered Courses</h1>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Course Name</th>
+                <th>Description</th>
+                <th>Duration (hours)</th>
+                <th>Video</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% courses.forEach(course => { %>
+                <tr>
+                    <td><%= course.course_name %></td>
+                    <td><%= course.description %></td>
+                    <td><%= course.duration %></td>
+                    <td><a href="/<%= course.video %>">Watch Video</a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+</body>
+</html>

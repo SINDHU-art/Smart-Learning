@@ -1,0 +1,465 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #1d3557;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #457b9d;
+        }
+
+        /* Dashboard Styles */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .dashboard h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1d3557;
+        }
+
+        .course-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .course-card h3 {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .course-card p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #777;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #1d3557;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #457b9d;
+        }
+    </style>
+</head>
+<body>
+
+    Navigation Bar -->
+    <!-- <nav>
+        <div class="logo">Dashboard</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="/user_profile">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- Dashboard Content -->
+    <!-- <div class="dashboard">
+        <h1>Welcome to Your Dashboard!</h1>
+        <p>Select a course to get started:</p> -->
+
+        <!-- Course Selection Section 
+        <div class="course-selection">
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Web Development</h3>
+                <p>Learn how to build websites from scratch.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Data Science</h3>
+                <p>Master data analysis and machine learning techniques.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Graphic Design</h3>
+                <p>Learn the basics of design and Adobe tools.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Digital Marketing</h3>
+                <p>Learn the essentials of digital marketing strategies.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+            background-repeat: no-repeat ;
+            background-size: 100%;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #1d3557;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #457b9d;
+        }
+
+        /* Dashboard Styles */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .dashboard h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1d3557;
+        }
+
+        .course-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .course-card {
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210805/pngtree-modern-simple-elegant-cool-gradient-cream-landing-page-website-background-image_757446.jpg");
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            width: 200px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    max-width: 200px;  /* Ensure the max-width is consistent with the card size */
+}
+
+        .course-card h3 {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .course-card p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #777;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #1d3557;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #457b9d;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Dashboard</div>
+        <ul>
+            <!-- <li><a href="/user_login">Login</a></li> -->
+            <li><a href="/user_profile">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard">
+        <!-- <h1>Welcome to Your Dashboard!</h1> -->
+         <h1>Available course are</h1>
+        <p>Select a course to get started:</p>
+
+        <!-- Course Selection Section -->
+        <div class="course-selection">
+            <div class="course-card" id="course-webdev">
+                <img src="https://t3.ftcdn.net/jpg/02/14/53/92/360_F_214539232_YnUrtuwUEt84gHuU0qG8l7OwZvH4rnPG.jpg" width="250 px" height="150 px" alt="Course Image">
+                <h3>Web Development</h3>
+                <p>Learn how to build websites from scratch.</p>
+                <!-- <button class="btn" onclick="enrollCourse('Web Development')">Enroll Now</button> -->
+                <!-- <a href="classes_web" class="btn" id ="course_name">Enroll Now</a> -->
+                <form action="/classes_web" method="POST">
+                    <input type="hidden" name="course_name" value="Web Development">
+                    <button type="submit" class="btn">Enroll Now</button>
+                     <a href="/classes-web" class="btn">Courses</a>
+                </form>
+                
+            </div>
+            <div class="course-card" id="course-datascience">
+                <img src="https://i.pinimg.com/736x/13/7f/eb/137feb8aa51e5456c01e2d3f9f7ae8ad.jpg" alt="Course Image">
+                <h3>Computer Networks</h3>
+                <p>Learn the advanced techniques in CN.</p>
+                <!-- <button class="btn" onclick="enrollCourse('Computer Networks')">Enroll Now</button> -->
+                <form action="/classes_cn" method="POST">
+                    <input type="hidden" name="course_name" value="Web Development">
+                    <button type="submit" class="btn">Enroll Now</button>
+                     <a href="/classes-cn" class="btn">Courses</a>
+                </form>
+            </div>
+            <div class="course-card" id="course-graphicdesign">
+                <img src="https://img.lovepik.com/background/20211022/large/lovepik-artificial-intelligence-background-image_500734183.jpg" alt="Course Image">
+                <h3>Artificial Intelligence</h3>
+                <p>Learn the basics of Artificial intelligence.</p>
+                <!-- <button class="btn" onclick="enrollCourse('Artificial Intelligence')">Enroll Now</button> -->
+                <form action="/classes_ai" method="POST">
+                    <input type="hidden" name="course_name" value="Web Development">
+                    <button type="submit" class="btn">Enroll Now</button>
+                     <a href="/classes-ai" class="btn">Courses</a>
+                </form>
+            </div>
+            <div class="course-card" id="course-digitalmarketing">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVx7E9kpk6ZtnSHnV5JxLoIXU_0mgk2X7ScQ&s" alt="Course Image">
+                <h3>Python Programming</h3>
+                <p>Learn the essentials of Python programming.</p>
+                <!-- <button class="btn" onclick="enrollCourse('Python Programming')">Enroll Now</button> -->
+                <form action="/classes_py" method="POST">
+                    <input type="hidden" name="course_name" value="Web Development">
+                    <button type="submit" class="btn">Enroll Now</button>
+                     <a href="/classes-py" class="btn">Courses</a>
+                </form> 
+            </div>
+        </div>
+    </div>
+    
+
+    <script>
+        function enrollCourse(courseName) {
+            // Validate the course name
+            if (!courseName || typeof courseName !== 'string' || courseName.trim() === '') {
+                alert('Course name is missing or invalid!');
+                return;
+            }
+    
+            console.log(typeof(courseName))  // Logging the type to ensure it's a string
+            console.log('Attempting to enroll in:', courseName);
+    
+            // Sending the POST request with the correct body structure
+            axios.post('/enroll', { courseName: courseName })
+                .then(response => {
+                    if (response.data.success) {
+                        alert('You have successfully enrolled in ' + courseName);
+                       
+                    } else {
+                        console.error('Enrollment Error:', response.data);
+                        alert('There was an error enrolling in the course: ' + (response.data.message || 'Unknown error.'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Network error:', error);
+                    alert('An error occurred while enrolling in the course. Please try again later.');
+                });
+
+
+                axios.post('/enroll_cn', { courseName: courseName })
+                .then(response => {
+                    if (response.data.success) {
+                        alert('You have successfully enrolled in ' + courseName);
+                       
+                    } else {
+                        console.error('Enrollment Error:', response.data);
+                        alert('There was an error enrolling in the course: ' + (response.data.message || 'Unknown error.'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Network error:', error);
+                    alert('An error occurred while enrolling in the course. Please try again later.');
+                });
+
+
+                axios.post('/enroll_ai', { courseName: courseName })
+                .then(response => {
+                    if (response.data.success) {
+                        alert('You have successfully enrolled in ' + courseName);
+                       
+                    } else {
+                        console.error('Enrollment Error:', response.data);
+                        alert('There was an error enrolling in the course: ' + (response.data.message || 'Unknown error.'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Network error:', error);
+                    alert('An error occurred while enrolling in the course. Please try again later.');
+                });
+
+
+                axios.post('/enroll_py', { courseName: courseName })
+                .then(response => {
+                    if (response.data.success) {
+                        alert('You have successfully enrolled in ' + courseName);
+                       
+                    } else {
+                        console.error('Enrollment Error:', response.data);
+                        alert('There was an error enrolling in the course: ' + (response.data.message || 'Unknown error.'));
+                    }
+                })
+                .catch(error => {
+                    console.error('Network error:', error);
+                    alert('An error occurred while enrolling in the course. Please try again later.');
+                });
+        }
+    </script>
+    
+</body>
+</html>    

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <!-- <link rel="stylesheet" href="/styles.css"> Link to your CSS file -->
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: #333;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    
+        /* Login Container Styles */
+        .login-container {
+            background-color: #f4f4f4;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+    
+        .login-container h2 {
+            font-size: 28px;
+            color: #1d3557;
+            margin-bottom: 20px;
+        }
+    
+        .login-container label {
+            display: block;
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #333;
+            text-align: left;
+        }
+    
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+    
+        .login-container input:focus {
+            border-color: #1d3557;
+            outline: none;
+            box-shadow: 0 0 4px rgba(29, 53, 87, 0.5);
+        }
+    
+        .login-btn {
+            display: inline-block;
+            width: 100%;
+            padding: 12px;
+            background-color: #1d3557;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+    
+        .login-btn:hover {
+            background-color: #457b9d;
+        }
+    
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+    
+            .login-container {
+                padding: 20px;
+            }
+        }
+    </style>
+    
+
+</head>
+<body>
+    <div class="login-container">
+        <form action="/admin-login" method="POST" class="login-form">
+            <h2>Admin Login</h2>
+
+            <!-- Admin USN -->
+            <label for="admin_usn">Admin USN:</label>
+            <input type="text" id="admin_usn" name="admin_usn" placeholder="Enter your admin username" required>
+
+            <!-- Password -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</body>
+</html>

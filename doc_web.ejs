@@ -1,0 +1,15 @@
+
+    <!-- File Upload Form -->
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="file">Choose a document or PDF file:</label>
+        <input type="file" name="file" id="file" accept="application/pdf">
+        <button type="submit">Upload</button>
+    </form>
+
+    <!-- Display Uploaded PDF -->
+    <% if (uploadedFilePath) { %>
+        <h2>Uploaded PDF:</h2>
+        <iframe src="<%= uploadedFilePath %>" width="100%" height="600px"></iframe>
+    <% } %>
+</body>
+</html>

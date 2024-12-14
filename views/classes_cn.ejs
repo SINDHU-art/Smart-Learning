@@ -1,0 +1,360 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #1d3557;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #457b9d;
+        }
+
+        /* Dashboard Styles */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .dashboard h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1d3557;
+        }
+
+        .course-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-card img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .course-card h3 {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .course-card p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #777;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #1d3557;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #457b9d;
+        }
+    </style>
+</head>
+<body>
+
+    Navigation Bar -->
+    <!-- <nav>
+        <div class="logo">Dashboard</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Courses</a></li>
+            <li><a href="/user_profile">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav> -->
+
+    <!-- Dashboard Content -->
+    <!-- <div class="dashboard">
+        <h1>Welcome to Your Dashboard!</h1>
+        <p>Select a course to get started:</p> -->
+
+        <!-- Course Selection Section 
+        <div class="course-selection">
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Web Development</h3>
+                <p>Learn how to build websites from scratch.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Data Science</h3>
+                <p>Master data analysis and machine learning techniques.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Graphic Design</h3>
+                <p>Learn the basics of design and Adobe tools.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+            <div class="course-card">
+                <img src="https://via.placeholder.com/250x150" alt="Course Image">
+                <h3>Digital Marketing</h3>
+                <p>Learn the essentials of digital marketing strategies.</p>
+                <a href="#" class="btn">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <style>
+        /* Reset some basic styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+            background-repeat: no-repeat ;
+            background-size: 100%;
+            color: #333;
+            margin: 0;
+        }
+
+        /* Navigation Bar Styles */
+        nav {
+            background-color: #1d3557;
+            color: white;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #457b9d;
+        }
+
+        /* Dashboard Styles */
+        .dashboard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .dashboard h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #1d3557;
+        }
+
+        .course-selection {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .course-card {
+            background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20210805/pngtree-modern-simple-elegant-cool-gradient-cream-landing-page-website-background-image_757446.jpg");
+            border-radius: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 25px;
+            width: 300px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-card img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    max-width: 200px;  /* Ensure the max-width is consistent with the card size */
+}
+
+        .course-card h3 {
+            margin-top: 15px;
+            font-size: 22px;
+            color: #333;
+        }
+
+        .course-card p {
+            font-size: 16px;
+            margin-top: 10px;
+            color: #777;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #1d3557;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #457b9d;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Computer Networks</div>
+        <ul>
+            <!-- <li><a href="#">Home</a></li> -->
+            <li><a href="/user_dashboard">Courses</a></li>
+            <li><a href="/user_profile">Profile</a></li>
+            <li><a href="#">Logout</a></li>
+        </ul>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard">
+        <h1>Computer Networks</h1>
+
+        <!-- Course Selection Section -->
+        <div class="course-selection">
+            <div class="course-card" id="Web-resources">
+                <img src="https://img.freepik.com/premium-vector/regulation-compliance-icon-made-with-binary-code-reg-tech-financial-control-background_127544-3039.jpg" width="250 px" height="180 px" alt="Course Image">
+                <h3>Classes</h3>
+                <p>Get the study material on Computer Network.</p>
+                <!-- <button class="btn" onclick="enrollCourse('Web Development')">Click Here</button> -->
+                <form action="/enroll_cn" method="GET">
+                    <input type="hidden" id = "course_name" name="Computer Networks" value="Computer Networks">
+                    <button type="submit" class="btn" onclick="enrollCourse('Computer Networks')">Click Here</button>
+                </form>
+                
+                
+
+            </div>
+            <div class="course-card" id="Web-classes">
+                <img src="https://t3.ftcdn.net/jpg/07/52/86/14/360_F_752861468_Zio6Da4WPLeUYj9A34wmWfB7U9J3Fb5n.jpg" width="250 px" height="180 px" alt="Course Image">
+                <h3>Documents</h3>
+                <p>Get the classes on Computer Networks.</p>
+                <button class="btn">Click here</button>
+            </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>    
